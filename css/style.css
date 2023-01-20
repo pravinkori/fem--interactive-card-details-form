@@ -92,6 +92,59 @@ body {
   border: 2px solid red;
 }
 
-.card-previews {
+.card-front,
+.card-back {
+  border: 5px solid limegreen;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.card-front {
+  --card-padding: 2rem;
+}
+
+.card-front,
+.card-back {
   position: relative;
+  width: min-content;
+}
+
+.card-front>*:not(.card-front__bg),
+.card-back>*:not(.card-back__bg) {
+  position: absolute;
+}
+
+.card-front__bg,
+.card-back__bg {
+  max-width: revert;
+}
+
+.card-front__logo {
+  top: var(--card-padding);
+  left: var(--card-padding);
+}
+
+.card-front__number {
+  top: 50%;
+  left: var(--card-padding);
+  letter-spacing: 2px;
+  font-size: 1.925rem;
+}
+
+.card-front__name {
+  bottom: var(--card-padding);
+  left: var(--card-padding);
+}
+
+.card-front__expiry {
+  right: var(--card-padding);
+  bottom: var(--card-padding);
+}
+
+.card-back__cvc {
+  right: 3.5rem;
+  top: 44%;
 }
