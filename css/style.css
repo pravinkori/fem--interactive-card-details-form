@@ -88,27 +88,29 @@ body {
   }
 }
 
-.content-grid>* {
-  border: 2px solid red;
-}
-
-.card-front,
-.card-back {
-  border: 5px solid limegreen;
-}
-
 img {
   max-width: 100%;
   display: block;
 }
 
+.card-previews {
+  position: relative;
+}
+
 .card-front {
   --card-padding: 2rem;
+
+  z-index: 2;
+  top: 35%;
+}
+
+.card-back {
+  right: 0;
 }
 
 .card-front,
 .card-back {
-  position: relative;
+  position: absolute;
   width: min-content;
 }
 
@@ -147,4 +149,22 @@ img {
 .card-back__cvc {
   right: 3.5rem;
   top: 44%;
+}
+
+@media (min-width: 960px) {
+
+  .card-previews {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .card-front,
+  .card-back {
+    inset: auto;
+    position: relative;
+  }
+
+  .card-back {
+    margin-left: auto;
+  }
 }
